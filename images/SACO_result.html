@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+window.onload = function () {
+
+var chart_1 = new CanvasJS.Chart("shahril1", {
+	animationEnabled: true,
+	exportEnabled: true,
+	theme: "light1", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Performance Result Comparison"
+	},			
+			axisX: {
+				title: "Use Case"
+			},	
+			axisY: {
+				title: "Transaction ",
+				interval: 1000,
+			},
+			axisY2: {
+				title: "Use Case"
+			},	
+	data: [{
+		type: "column", //change type to bar, line, area, pie, etc
+		//indexLabel: "{y}", //Shows y value on all Data Points
+		indexLabelFontColor: "#5A5757",
+		indexLabelPlacement: "outside",
+		dataPoints: [					
+				{label: "Running using ALTER TABLE statement ...", y: 7939  },
+				{label: "Running using GH-OST ", y: 7923  },
+				{label: "Running using SACO ", y: 3120  },
+		]
+	}]
+});
+
+
+chart_1.render();
+
+}
+</script>
+</head>
+<body>
+<div id="shahril1" style="height: 300px; width: 100%;"></div><br/><br/>
+<br/>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
